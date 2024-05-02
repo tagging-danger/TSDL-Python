@@ -1,0 +1,13 @@
+# Take a tuple of numbers as input from the user
+tuple_of_numbers = tuple(map(int, input("Enter a tuple of numbers separated by spaces: ").split()))
+
+# Take user input for K
+k = int(input("Enter the value of K: "))
+
+# Find the maximum and minimum K elements
+max_k_elements = tuple(sorted(tuple_of_numbers, reverse=True)[:k])
+min_k_elements = tuple(sorted(tuple_of_numbers)[:k])
+
+# Display the results
+print(f"\nMaximum {k} elements: {max_k_elements}")
+print(f"Minimum {k} elements: {min_k_elements}")

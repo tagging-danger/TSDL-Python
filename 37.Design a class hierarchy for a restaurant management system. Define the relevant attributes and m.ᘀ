@@ -1,0 +1,45 @@
+class Dish:
+    def __init__(self, dish_name, price, cuisine_type):
+        self.dish_name = dish_name
+        self.price = price
+        self.cuisine_type = cuisine_type
+
+    def display_info(self):
+        print(f"Dish: {self.dish_name}")
+        print(f"Price: ${self.price}")
+        print(f"Cuisine Type: {self.cuisine_type}")
+        print("------------------------------")
+
+
+class Appetizer(Dish):
+    def __init__(self, dish_name, price, cuisine_type, serving_size):
+        super().__init__(dish_name, price, cuisine_type)
+        self.serving_size = serving_size
+
+    def display_info(self):
+        super().display_info()
+        print(f"Serving Size: {self.serving_size} pieces")
+        print("------------------------------")
+
+
+class VegetarianAppetizer(Appetizer):
+    def __init__(self, dish_name, price, serving_size):
+        super().__init__(dish_name, price, cuisine_type="Vegetarian", serving_size=serving_size)
+
+
+# Example Usage:
+if __name__ == "__main__":
+    # Create instances of the classes
+    dish1 = Dish("Pasta Carbonara", 15.99, "Italian")
+    appetizer1 = Appetizer("Chicken Wings", 8.99, "American", serving_size=10)
+    veg_appetizer1 = VegetarianAppetizer("Spinach Dip", 7.99, serving_size=8)
+
+    # Display information about the dishes
+    print("Information about Dish 1:")
+    dish1.display_info()
+
+    print("Information about Appetizer 1:")
+    appetizer1.display_info()
+
+    print("Information about Vegetarian Appetizer 1:")
+    veg_appetizer1.display_info()

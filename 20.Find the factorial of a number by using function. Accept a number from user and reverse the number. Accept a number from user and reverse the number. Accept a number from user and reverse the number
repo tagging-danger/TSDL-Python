@@ -1,0 +1,22 @@
+def calculate_factorial(num):
+    if num == 0 or num == 1:
+        return 1
+    else:
+        return num * calculate_factorial(num - 1)
+
+def reverse_number(number):
+    reversed_num = int(str(number)[::-1])
+    return reversed_num
+
+# Take a number as input from the user
+user_number = int(input("Enter a number: "))
+
+# Calculate factorial
+factorial_result = calculate_factorial(user_number)
+
+# Reverse the number
+reversed_result = reverse_number(user_number)
+
+# Display the results
+print(f"\nFactorial of {user_number}: {factorial_result}")
+print(f"Reverse of {user_number}: {reversed_result}")
